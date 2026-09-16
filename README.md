@@ -1,4 +1,4 @@
-# Lancer System for FoundryVTT
+# Lancer System for FoundryVTT 한글 번역
 
 A Foundry VTT system for the [Lancer RPG](https://massif-press.itch.io/corebook-pdf) by [Massif Press](https://massif-press.itch.io/).
 
