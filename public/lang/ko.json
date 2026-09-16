@@ -1,0 +1,591 @@
+{
+  "TYPES": {
+    "Actor": {
+      "deployable": "배치물",
+      "mech": "메크",
+      "npc": "NPC",
+      "pilot": "파일럿"
+    },
+    "Item": {
+      "bond": "본드",
+      "core_bonus": "코어 보너스",
+      "frame": "프레임",
+      "license": "라이선스",
+      "mech_system": "메크 시스템",
+      "mech_weapon": "메크 무기",
+      "npc_class": "NPC 클래스",
+      "npc_feature": "NPC 특성",
+      "npc_template": "NPC 템플릿",
+      "organization": "조직",
+      "pilot_armor": "파일럿 장갑",
+      "pilot_gear": "파일럿 장비",
+      "pilot_weapon": "파일럿 무기",
+      "reserve": "예비",
+      "skill": "스킬",
+      "status": "상태/상태이상",
+      "talent": "탈렌트",
+      "weapon_mod": "무기 개조"
+    }
+  },
+  "lancer": {
+    "LancerPilotSheet": "Lancer 시스템 파일럿 시트",
+    "LancerMechSheet": "Lancer 시스템 메크 시트",
+    "LancerDeployableSheet": "Lancer 시스템 배치물 시트",
+    "LancerNPCSheet": "Lancer 시스템 NPC 시트",
+    "LancerItemSheet": "Lancer 시스템 아이템 시트",
+    "LancerFrameSheet": "Lancer 시스템 프레임 시트",
+    "LancerLicenseSheet": "Lancer 시스템 라이선스 시트",
+    "LancerNPCClassSheet": "Lancer 시스템 NPC 클래스/템플릿 시트",
+    "LancerNPCFeatureSheet": "Lancer 시스템 NPC 특성 시트",
+    "Actor": {
+      "FIELDS": {
+        "activations": {
+          "label": "활성화 횟수"
+        }
+      }
+    },
+    "placeholder": {
+      "name": "이름"
+    },
+    "common-sheet": {
+      "tabs": {
+        "effects": "<효과//활성>"
+      },
+      "headers": {
+        "combatUtilities": "전투 유틸리티"
+      },
+      "buttons": {
+        "basicAttack": "근접/원거리",
+        "damage": "피해",
+        "fullRepair": "전체 수리",
+        "overheat": "과열",
+        "scan": "스캔",
+        "stabilize": "안정화",
+        "structure": "구조",
+        "tech": "테크"
+      },
+      "shortStats": {
+        "hull": "HULL",
+        "agi": "AGI",
+        "sys": "SYS",
+        "eng": "ENG",
+        "level": "라이선스 레벨",
+        "grit": "GRIT",
+        "tier": "티어",
+        "activations": "활성",
+        "hp": "HP",
+        "evasion": "회피",
+        "armor": "장갑",
+        "structure": "구조",
+        "heat": "열",
+        "heatcap": "열 한도",
+        "edef": "전자방어",
+        "stress": "스트레스",
+        "speed": "속도",
+        "save": "세이브",
+        "sensor_range": "센서",
+        "tech_attack": "테크어택",
+        "overcharge": "오버차지",
+        "burn": "화상",
+        "overshield": "오버실드",
+        "repairs": "수리",
+        "size": "크기",
+        "cost": "비용"
+      }
+    },
+    "deployable-sheet": {
+      "header": {
+        "owner": "소유자"
+      },
+      "tabs": {
+        "status": "<상태>",
+        "config": "<설정>"
+      },
+      "deployer": {
+        "label": "배치자"
+      },
+      "stats": {
+        "label": "기본 스탯"
+      }
+    },
+    "mech-sheet": {
+      "header": {
+        "inactive-warning": "경고: 비활성 메크 - 파일럿 보너스가 적용되지 않습니다"
+      },
+      "tabs": {
+        "stats": "<메크//스탯>",
+        "loadout": "<메크//로드아웃>",
+        "talents": "<파일럿//탈렌트>"
+      },
+      "core": {
+        "label": "코어"
+      },
+      "actions": {
+        "label": "행동"
+      },
+      "macros": {
+        "label": "매크로"
+      },
+      "system": {
+        "label": "로드아웃",
+        "sp-used": "SP 사용량"
+      }
+    },
+    "npc-sheet": {
+      "header": {
+        "class": "클래스",
+        "templates": "템플릿"
+      },
+      "class": {
+        "label": "클래스",
+        "none": "클래스를 찾을 수 없음"
+      },
+      "templates": {
+        "label": "템플릿"
+      },
+      "features": {
+        "label": "특성"
+      },
+      "effects": {
+        "label": "활성 효과"
+      }
+    },
+    "pilot-sheet": {
+      "header": {
+        "ll": "LL",
+        "cs": "콜사인",
+        "name": "이름",
+        "bg": "배경"
+      },
+      "tabs": {
+        "cloud": "<RM-4://동기화>",
+        "dossier": "<파일럿//신상정보>",
+        "narrative": "<파일럿//내러티브>",
+        "tactical": "<파일럿//전술>",
+        "loadout": "<장비//로드아웃>",
+        "mech": "<메크//활성>"
+      },
+      "cloud-header": {
+        "label": "RM-4://(옴니넷 업링크 ID)",
+        "raw-placeholder": "파일럿 공유 코드를 붙여넣으세요"
+      },
+      "cloud-download": {
+        "label": "다운로드",
+        "description": "이 섹션을 사용하여 Comp/Con 공유 코드를 가져옵니다.",
+        "lastSync": "마지막 동기화: {timestamp}"
+      },
+      "cloud-upload": {
+        "label": "업로드",
+        "wip": "기능 개발 중"
+      },
+      "json-import": {
+        "label": "파일 가져오기",
+        "description": "이 섹션을 사용하여 Comp/Con에서 내보낸 JSON 파일을 가져옵니다.",
+        "placeholder": "JSON 파일 선택…"
+      },
+      "dossier": {
+        "cs": "콜사인",
+        "name": "이름",
+        "background": "배경"
+      },
+      "narrative": {
+        "bond": "{bondName}의 본드",
+        "burdens": "부담",
+        "clocks": "클락"
+      },
+      "tactical": {
+        "armor": "장갑",
+        "weapons": "무기",
+        "gear": "장비",
+        "reserves": "예비",
+        "licenses": "라이선스",
+        "cores": "코어 보너스"
+      },
+      "abilities": {
+        "skills": "스킬 트리거",
+        "talents": "탈렌트"
+      }
+    },
+    "chat-card": {
+      "title": {
+        "attack": "// 공격 //",
+        "damage": "// 피해 //",
+        "reliable": "// 신뢰 //",
+        "crit-damage": "// 크리티컬 피해 //",
+        "self-heat": "// 자체 열 //",
+        "defense-hit": "// {defense} 방어 대상 공격 //",
+        "effect": "// 효과 //",
+        "on-attack": "// 공격 시 //",
+        "on-hit": "// 명중 시 //",
+        "on-crit": "// 크리티컬 시 //",
+        "charge-roll": "// 충전 굴림 //",
+        "recharged": "// 재충전됨 //",
+        "structure": "// 구조 피해 //",
+        "overheating": "// 과열 //",
+        "cascade": "// 캐스케이드 //",
+        "check": "// 체크 :: {check} //",
+        "system": "// 시스템 :: {title} //",
+        "mod": "// 개조 :: {title} //",
+        "trait": "// 특성 :: {title} //",
+        "tech": "// 테크 :: {title} //",
+        "reaction": "// 반응 :: {title} //"
+      },
+      "label": {
+        "trigger": "트리거",
+        "effect": "효과"
+      },
+      "attack": {
+        "crit": "크리티컬",
+        "hit": "명중",
+        "miss": "빗나감",
+        "roll-all-damage": "피해 굴림"
+      },
+      "exclamation": {
+        "overkill": "오버킬!"
+      },
+      "overcharge": {
+        "charged": "{target} + :: 충전됨",
+        "uncharged": "{target} + :: 미충전"
+      },
+      "remaining": "{total} / {max} 남음"
+    },
+    "floatingDamageNumbers": {
+      "name": "떠다니는 피해 숫자",
+      "hint": "피해 굴림 적용을 포함하여 스탯 변화에 대한 떠다니는 피해 숫자를 활성화합니다. 이 설정은 클라이언트마다 별도로 적용됩니다."
+    },
+    "simpleFonts": {
+      "name": "단순/일반 폰트 사용",
+      "hint": "가독성을 위해 스타일리시한 SF 헤더 폰트를 Helvetica로 교체합니다. 이 설정은 클라이언트마다 별도로 적용됩니다."
+    },
+    "uiTheme": {
+      "name": "UI 테마",
+      "hint": "Comp/Con의 테마를 반영한 UI 색상 구성입니다.",
+      "gms": "GMS 레드 (기본값)",
+      "gmsDark": "GMS 다크",
+      "msmc": "MSMC 솔라라이즈드",
+      "horus": "HORUS 터미널",
+      "ha": "Harrison Armory 라스 샤므라",
+      "ssc": "SSC 콘스텔라 의회",
+      "ipsn": "IPS-N 카리나",
+      "gal": "FORECAST/GALSIM"
+    },
+    "pauseIcon": {
+      "name": "일시정지 아이콘",
+      "hint": "파운드리 일시정지 오버레이에 사용할 아이콘 그래픽입니다.",
+      "gms": "유니온/GMS (기본값)",
+      "horus": "HORUS",
+      "ha": "Harrison Armory",
+      "ssc": "SSC",
+      "ips-n": "IPS-N",
+      "albatross": "Albatross",
+      "aun": "Aun Ascendancy",
+      "barony": "Karrakin Trade Baronies",
+      "horizon": "Horizon Collective",
+      "ra": "RA",
+      "sparri": "Sparri",
+      "voladores": "Voladores"
+    },
+    "scanOutput": {
+      "name": "스캔 결과 위치",
+      "hint": "스캔 결과를 어디에 기록할까요?",
+      "both": "채팅 & 저널",
+      "chat": "채팅만",
+      "journal": "저널만"
+    },
+    "statusIconsConfig": {
+      "menu-name": "상태 아이콘",
+      "menu-label": "상태 아이콘 설정",
+      "menu-hint": "토큰 HUD에 표시되는 상태 아이콘을 설정합니다",
+      "defaultConditionsStatus": "기본 상태 및 상태이상",
+      "defaultConditionsStatus-desc": "상태 및 상태이상에 대한 기본 아이콘 세트를 활성화합니다",
+      "cancerConditionsStatus": "Cancermantis의 상태 및 상태이상",
+      "cancerConditionsStatus-desc": "상태 및 상태이상에 대한 Cancermantis의 아이콘 세트를 활성화합니다",
+      "cancerNPCTemplates": "Cancermantis의 NPC 템플릿",
+      "cancerNPCTemplates-desc": "NPC 템플릿에 대한 Cancermantis의 아이콘 세트를 활성화합니다",
+      "hayleyConditionsStatus": "Hayley의 상태 및 상태이상",
+      "hayleyConditionsStatus-desc": "상태 및 상태이상에 대한 Hayley의 아이콘 세트를 활성화합니다",
+      "hayleyPC": "Hayley의 PC 시스템",
+      "hayleyPC-desc": "PC 시스템 효과에 대한 Hayley의 아이콘 세트를 활성화합니다",
+      "hayleyNPC": "Hayley의 NPC 시스템",
+      "hayleyNPC-desc": "NPC 시스템 효과에 대한 Hayley의 아이콘 세트를 활성화합니다",
+      "hayleyUtility": "Hayley의 유틸리티",
+      "hayleyUtility-desc": "유틸리티 표시기에 대한 Hayley의 아이콘 세트를 활성화합니다",
+      "tommyConditionsStatus": "Tommy의 상태 및 상태이상",
+      "tommyConditionsStatus-desc": "상태 및 상태이상에 대한 Tommy의 아이콘 세트를 활성화합니다"
+    },
+    "statusIconsNames": {
+      "abjure": "추방",
+      "aceso": "아케소",
+      "blind": "실명",
+      "bolster": "강화",
+      "burn": "화상",
+      "camus_razor": "카뮈의 면도날",
+      "chain": "사슬",
+      "chains_of_prometheus": "프로메테우스의 사슬",
+      "clamp_bomb": "클램프 폭탄",
+      "commander": "지휘관",
+      "cover_hard": "엄폐 - 하드",
+      "cover_soft": "엄폐 - 소프트",
+      "dangerzone": "데인저 존",
+      "destroyed": "파괴됨",
+      "dimensional_shackles": "차원 족쇄",
+      "dispersal_shield_1": "분산 실드 1",
+      "dispersal_shield_2": "분산 실드 2",
+      "dispersal_shield_3": "분산 실드 3",
+      "dominions_breadth": "도미니언의 영역",
+      "downandout": "다운 앤 아웃",
+      "duat_gate": "두아트 게이트",
+      "echo_edge": "에코 엣지",
+      "elite": "엘리트",
+      "engaged": "교전",
+      "excommunicate": "파문",
+      "exotic": "이색",
+      "exposed": "노출",
+      "fade_cloak": "페이드 클로크",
+      "flaw_minus": "결함_마이너스",
+      "flaw_plus": "결함_플러스",
+      "flying": "비행",
+      "focus_down": "포커스 다운",
+      "follower_count": "추종자 수",
+      "grappled": "포박됨",
+      "gravity": "중력",
+      "grind_maniple": "그라인드 마니플",
+      "grunt": "그런트",
+      "haste": "가속",
+      "hidden": "은신",
+      "hiddeninvis": "은신 및 투명",
+      "hunter_lock": "헌터 락",
+      "hyperdense_armor": "초고밀도 장갑",
+      "illusionary_subroutines": "환영 서브루틴",
+      "immobilized": "이동불가",
+      "impaired": "손상",
+      "imperial_eye": "제국의 눈",
+      "intangible": "무형",
+      "investiture": "인베스티처",
+      "invisible": "투명",
+      "jammed": "재밍됨",
+      "kraul_grapple": "크라울 그래플",
+      "latch_drone": "래치 드론",
+      "lockon": "락온",
+      "marked": "표식",
+      "mercenary": "용병",
+      "metahook": "메타훅",
+      "molten_puncture": "용암 관통",
+      "npc_tier_1": "티어 1",
+      "npc_tier_2": "티어 2",
+      "npc_tier_3": "티어 3",
+      "overshield": "오버실드",
+      "pain_transference": "고통 전이",
+      "petrify": "석화",
+      "pirate": "해적",
+      "prone": "넘어짐",
+      "reactor_meltdown": "반응로 멜트다운",
+      "resistance_burn": "화상 저항",
+      "resistance_energy": "에너지 저항",
+      "resistance_explosive": "폭발 저항",
+      "resistance_heat": "열 저항",
+      "resistance_kinetic": "운동 저항",
+      "retort_loop": "리토트 루프",
+      "rpv": "RPV",
+      "sanctuary": "안식처",
+      "shahnameh": "샤나메",
+      "ship": "선박",
+      "shredded": "파쇄됨",
+      "shutdown": "셧다운",
+      "slow": "둔화",
+      "spacer": "우주인",
+      "spike": "스파이크",
+      "stasis": "정지 상태",
+      "stunned": "경직",
+      "supercharger": "슈퍼차저",
+      "sympathetic_shield": "공명 실드",
+      "tachyon_shield": "타키온 실드",
+      "tear_down": "해체",
+      "terrify": "공포",
+      "tiercust": "커스텀 티어",
+      "tracking_bug": "추적 버그",
+      "trueblack": "트루블랙 이지스",
+      "ultra": "울트라",
+      "unravel": "언래블",
+      "vehicle": "차량",
+      "veteran": "베테랑",
+      "viral_logic": "바이럴 로직",
+      "walk_of_kings": "왕들의 길",
+      "warp_sensors": "워프 센서"
+    },
+    "automation": {
+      "menu-name": "자동화",
+      "menu-label": "시스템 자동화 설정",
+      "menu-hint": "활성화할 시스템 자동화 옵션을 설정하거나 모두 끕니다",
+      "master-switch": "활성화",
+      "master-switch-desc": "모든 것을 수동으로 하려면 이 옵션을 끄세요",
+      "attacks": "공격 굴림 판정",
+      "attacks-desc": "시스템이 명중 여부와 기타 공격 관련 자동화를 자동으로 계산할지 여부를 전환합니다.",
+      "damage": "피해 적용",
+      "damage-desc": "시스템이 굴린 피해를 대상에게 자동으로 적용할지 여부를 전환합니다.",
+      "structure": "구조/스트레스",
+      "structure-desc": "메크가 0 HP에 도달하거나 열 한도를 초과할 때 자동으로 구조 또는 스트레스 굴림을 요청합니다.",
+      "overcharge_heat": "오버차지 열 적용",
+      "overcharge_heat-desc": "오버차지를 굴릴 때 열을 자동으로 적용합니다",
+      "attack_self_heat": "공격으로 인한 자체 열",
+      "attack_self_heat-desc": "무기에 오버킬 또는 열(자체) 태그가 있을 때, 열을 자동으로 적용합니다.",
+      "remove_templates": "템플릿 자동 제거",
+      "remove_templates-desc": "턴이 바뀌면 공격으로 생성된 측정 템플릿을 지워야 합니까?",
+      "limited_loading": "제한/장전 관리",
+      "limited_loading-desc": "아이템을 사용할 때, 제한 및 장전 상태를 자동으로 관리하고 추적해야 합니까?",
+      "npc_recharge": "NPC 재충전",
+      "npc_recharge-desc": "NPC 턴 시작 시 NPC 시스템 재충전 굴림을 자동으로 합니다.",
+      "token_size": "토큰 크기 관리",
+      "token_size-desc": "관련 액터의 크기 스탯에 맞춰 토큰 크기를 자동으로 강제 조정합니다."
+    },
+    "actionTracker": {
+      "menu-name": "행동 트래커",
+      "menu-label": "행동 트래커 설정",
+      "menu-hint": "행동 트래커 HUD 및 자동화 관련 옵션을 설정합니다.",
+      "showHotbar": "핫바 표시",
+      "showHotbar-desc": "전투 중 떠다니는 핫바 표시를 전환합니다.",
+      "allowPlayers": "플레이어 허용",
+      "allowPlayers-desc": "플레이어가 자신의 행동을 수정할 수 있도록 허용합니다.",
+      "printMessages": "메시지 출력",
+      "printMessages-desc": "토큰 턴의 시작과 끝에 채팅 메시지를 출력합니다."
+    },
+    "initiative": {
+      "sorttracker": "트래커 정렬",
+      "sorttracker-desc": "현재 턴을 진행 중인 유닛을 트래커 맨 위로 이동시키고, 턴을 마친 유닛을 트래커 맨 끝으로 이동시킵니다.",
+      "appearancesettingslabel": "외관 설정",
+      "appearancesettingsbutton": "외관",
+      "appearancesettings-desc": "트래커에 사용되는 색상과 아이콘을 설정합니다"
+    },
+    "squaregriddiagonals": {
+      "name": "정사각형 그리드 대각선 이동",
+      "hint": "정사각형 그리드에서 대각선으로 이동할 때 거리를 계산하는 방식입니다.",
+      "111": "1-1-1: 대각선 이동 비용은 1입니다 (기본값)",
+      "121": "1-2-1: 대각선 이동 비용이 1과 2를 번갈아 가며 적용됩니다",
+      "222": "2-2-2: 맨해튼 거리. 대각선 이동 비용은 2입니다",
+      "euc": "유클리드: 유클리드 거리를 반올림합니다"
+    },
+    "effect": {
+      "categories": {
+        "passive": "패시브",
+        "passthrough": "통과",
+        "disabled": "비활성화됨",
+        "inherited": "상속됨"
+      }
+    },
+    "tables": {
+      "structure": {
+        "title": {
+          "crushing": "분쇄 타격",
+          "direct": "직격",
+          "trauma": "시스템 손상",
+          "glancing": "스치는 타격"
+        },
+        "description": {
+          "crushing": "당신의 메크는 수리할 수 없을 정도로 손상되어 파괴됩니다. 여전히 정상적으로 탈출할 수 있습니다.",
+          "direct": {
+            "3plus": "당신의 메크는 다음 턴이 끝날 때까지 @LancerID[stunned] 상태가 됩니다.",
+            "2": "HULL 체크를 굴립니다. 성공하면, 당신의 메크는 다음 턴이 끝날 때까지 @LancerID[stunned] 상태가 됩니다. 실패하면, 메크가 파괴됩니다.",
+            "1": "당신의 메크가 파괴됩니다."
+          },
+          "trauma": "메크의 일부가 피해로 찢겨 나갑니다. 1d6을 굴립니다. 1–3이 나오면, 선택한 마운트의 모든 무기가 파괴됩니다. 4–6이 나오면, 선택한 시스템이 파괴됩니다. 다 쓴 LIMITED 시스템과 사용 횟수가 소진된 무기는 유효한 선택이 아닙니다. 유효한 선택이 남아 있지 않으면, 다른 결과가 됩니다. 남아 있는 시스템이나 무기가 전혀 없으면, 이 결과는 대신 DIRECT HIT이 됩니다.",
+          "glancing": "비상 시스템이 작동하여 메크를 안정시키지만, 다음 턴이 끝날 때까지 @LancerID[impaired] 상태가 됩니다."
+        }
+      },
+      "overheat": {
+        "title": {
+          "irreversible": "돌이킬 수 없는 멜트다운",
+          "meltdown": "멜트다운",
+          "destabilized": "동력로 불안정",
+          "shunt": "긴급 차단"
+        },
+        "description": {
+          "irreversible": "반응로가 임계 상태가 됩니다. 다음 턴이 끝날 때 당신의 메크가 반응로 멜트다운을 겪습니다.",
+          "meltdown": {
+            "3plus": "당신의 메크는 @Compendium[world.status-items.Exposed] 상태가 됩니다",
+            "2": "ENGINEERING 체크를 굴립니다. 성공하면, 메크는 @Compendium[world.status-items.Exposed] 상태가 됩니다. 실패하면, 1d6턴 후(GM이 굴림) 반응로 멜트다운을 겪습니다. 전체 행동으로 ENGINEERING 체크를 다시 시도하면 반응로 멜트다운을 막을 수 있습니다.",
+            "1": "다음 턴이 끝날 때 당신의 메크가 반응로 멜트다운을 겪습니다."
+          },
+          "destabilized": "동력 장치가 불안정해져 플라즈마 분출을 시작합니다. 당신의 메크는 @Compendium[world.status-items.Exposed] 상태가 됩니다.",
+          "shunt": "메크의 냉각 시스템이 증가하는 열을 억제하는 데 성공합니다. 그러나 메크는 다음 턴이 끝날 때까지 @Compendium[world.status-items.Impaired] 상태가 됩니다."
+        }
+      },
+      "structureMonstrosity": {
+        "title": {
+          "fatal": "치명타",
+          "direct": "직격",
+          "dismember": "절단",
+          "powerful": "강력한 타격",
+          "glancing": "스치는 타격"
+        },
+        "description": {
+          "fatal": "몬스트로시티가 파괴됩니다.",
+          "direct": {
+            "3plus": "몬스트로시티가 머리를 강타당해 다음 턴이 끝날 때까지 @LancerID[stunned] 상태가 됩니다.",
+            "2": "몬스트로시티는 HULL 세이브에 성공하지 못하면 파괴됩니다.",
+            "1": "몬스트로시티가 파괴됩니다."
+          },
+          "dismember": "공격이 몬스트로시티의 사지나 몸체 일부를 날려버립니다. 1d6 KINETIC 피해를 받고, 이번 장면이 끝날 때까지 @LancerID[slow] 상태가 됩니다.",
+          "powerful": "몬스트로시티가 타격의 충격으로 @LancerID[prone] 상태가 되어 넘어집니다.",
+          "glancing": "몬스트로시티가 고통에 움찔합니다. 다음 턴이 끝날 때까지 @LancerID[impaired] 상태가 됩니다."
+        }
+      }
+    },
+    "compendium": {
+      "core_macros": "LANCER 매크로",
+      "lancer_info": "LANCER 정보",
+      "deployable": "배치물",
+      "mech-items": "메크 아이템",
+      "npc-actors": "프리메이드 NPC",
+      "npc-items": "NPC 아이템",
+      "pilot-items": "파일럿 아이템",
+      "player-actors": "프리메이드 플레이어 액터",
+      "status-items": "상태/상태이상"
+    },
+    "tokenConfig": {
+      "manual_token_size": {
+        "label": "수동 토큰 크기 조정",
+        "hint": "토큰 크기를 결정하는 시스템 자동화를 우회합니다"
+      }
+    },
+    "movement": {
+      "actions": {
+        "blink": "순간이동 (이동)",
+        "forced": "강제 이동",
+        "ignore": "지형 무시",
+        "teleport": "순간이동 (능력)"
+      }
+    }
+  },
+  "LANCERINITIATIVE": {
+    "COMBAT": {
+      "activateCombatantTurn": "이 전투원의 턴 시작",
+      "deactivateCombatantTurn": "이 전투원의 턴 종료"
+    },
+    "IconSettingsMenu": "아이콘 설정",
+    "Icon": "행동 아이콘",
+    "IconDesc": "활성화 아이콘을 정의하는 CSS 클래스입니다.",
+    "DeactivateIcon": "비활성화 아이콘",
+    "DeactivateIconDesc": "비활성화 아이콘을 정의하는 CSS 클래스입니다.",
+    "IconSize": "아이콘 크기",
+    "IconPreview": "아이콘 미리보기",
+    "PCColor": "플레이어 색상",
+    "PCColorDesc": "기본값: #44abe0",
+    "FriendlyColor": "우호 색상",
+    "FriendlyColorDesc": "기본값: #44abe0",
+    "NeutralColor": "중립 색상",
+    "NeutralColorDesc": "기본값: #146464",
+    "EnemyColor": "적대 색상",
+    "EnemyColorDesc": "기본값: #d98f30",
+    "DoneColor": "비활성 색상",
+    "DoneColorDesc": "기본값: #aaaaaa",
+    "ActivatedLast": "활성화된 유닛 마지막으로",
+    "ActivatedLastDesc": "턴을 마친 유닛을 트래커 끝으로 이동시킵니다.",
+    "SortTracker": "트래커 정렬",
+    "SortTrackerDesc": "현재 턴을 진행 중인 유닛을 트래커 맨 위로 이동시키고, 턴을 마친 유닛을 트래커 맨 끝으로 이동시킵니다.",
+    "EnableInitiative": "선제권 굴림 활성화",
+    "EnableInitiativeDesc": "소유한 전투원에게 선제권을 굴리는 버튼을 추가합니다",
+    "AddActivation": "활성화 추가",
+    "RemoveActivation": "활성화 제거",
+    "UndoActivation": "활성화 취소"
+  }
+}
